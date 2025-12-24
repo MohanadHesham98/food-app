@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: admin
-        image: food-admin:latest
-        imagePullPolicy: IfNotPresent
+        image: mohanad898/food-admin:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         envFrom:

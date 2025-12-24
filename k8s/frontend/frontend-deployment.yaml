@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: food-frontend:latest
-        imagePullPolicy: IfNotPresent
+        image: mohanad898/food-frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         envFrom:
