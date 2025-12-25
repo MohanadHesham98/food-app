@@ -1,7 +1,7 @@
 import whitelogo from './whitelogo.png'
-import greenlogo from './GreenLogo.png'
+import blacklogo from './Blacklogo.png'
 
 export const assets={
     whitelogo,
-    greenlogo,
+    blacklogo,
 }

@@ -5,7 +5,7 @@ import "./WelcomeAdmin.css";
 const WelcomeAdmin = () => {
     return (
         <div className="welcome-container">
-            <img src={assets.greenlogo} alt="Nivala Logo" className="welcome-logo" />
+            <img src={assets.blacklogo} alt="Nivala Logo" className="welcome-logo" />
         </div>
     );
 };

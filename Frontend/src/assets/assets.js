@@ -1,14 +1,17 @@
 import logo from "./logo.png";
 import header_img from "./header_img.png";
-import Maharashtra from "./Maharashtra.png";
-import Gujarat from "./Gujarat.png";
-import Tamil_Nadu from "./Tamil_Nadu.png";
-import West_Bengal from "./West_Bengal.png";
-import Rajasthan from "./Rajasthan.png";
-import Karnataka from "./Karnataka.png";
-import Madhya_Pradesh from "./Madhya_Pradesh.png";
-import RestofIndia from "./RestofIndia.png";
 
+/* ===== Country Images ===== */
+import Italy from "./Italy.png";
+import Japan from "./Japan.png";
+import USA from "./USA.png";
+import India from "./India.png";
+import Mexico from "./Mexico.png";
+import France from "./France.png";
+import China from "./China.png";
+import Egypt from "./Egypt.png";
+
+/* ===== UI Icons ===== */
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
 import remove_icon_red from "./remove_icon_red.png";
@@ -21,9 +24,9 @@ import logout_icon from "./logout_icon.png";
 import parcel_icon from "./parcel_icon.png";
 import VegIcon from "./VegIcon.png";
 import NonVegIcon from "./NonVegIcon.png";
-import Coupon1 from "./coupon.png"
-import Coupon2 from "./coupon2.png"
-import Coupon3 from "./coupon3.png"
+import Coupon1 from "./coupon.png";
+import Coupon2 from "./coupon2.png";
+import Coupon3 from "./coupon3.png";
 
 export const assets = {
   logo,
@@ -42,44 +45,41 @@ export const assets = {
   NonVegIcon,
   Coupon1,
   Coupon2,
-  Coupon3
+  Coupon3,
 };
 
+/* ===== Global Menu (Countries) ===== */
 export const menu_list = [
   {
-    menu_name: "Maharashtra",
-    menu_image: Maharashtra,
+    menu_name: "Italy",
+    menu_image: Italy,
   },
   {
-    menu_name: "Gujarat",
-    menu_image: Gujarat,
+    menu_name: "Japan",
+    menu_image: Japan,
   },
   {
-    menu_name: "Tamil Nadu",
-    menu_image: Tamil_Nadu,
+    menu_name: "USA",
+    menu_image: USA,
   },
   {
-    menu_name: "West Bengal",
-    menu_image: West_Bengal,
+    menu_name: "India",
+    menu_image: India,
   },
   {
-    menu_name: "Rajasthan",
-    menu_image: Rajasthan,
+    menu_name: "Mexico",
+    menu_image: Mexico,
   },
   {
-    menu_name: "Karnataka",
-    menu_image: Karnataka,
+    menu_name: "France",
+    menu_image: France,
   },
   {
-    menu_name: "Madhya Pradesh",
-    menu_image: Madhya_Pradesh,
+    menu_name: "China",
+    menu_image: China,
   },
   {
-    menu_name: "Rest of India",
-    menu_image: RestofIndia,
+    menu_name: "Egypt",
+    menu_image: Egypt,
   },
 ];
-
-
-
-  

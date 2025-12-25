@@ -1,29 +1,27 @@
 import React, { useState } from "react";
 import "./Add.css";
-import { assets } from "../../assets/assets";
 import axios from "axios";
-import toast  from "react-hot-toast";
+import toast from "react-hot-toast";
 
-const Add = ({url}) => {
-  
+const Add = ({ url }) => {
   const [data, setData] = useState({
     name: "",
     description: "",
     price: "",
-    category: "Maharashtra",
+    category: "India",
     type: "Veg",
     serve: "",
     image: "",
   });
 
   const onchangehandler = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setData((data) => ({ ...data, [name]: value }));
+    const { name, value } = event.target;
+    setData((prev) => ({ ...prev, [name]: value }));
   };
 
   const onsubmitHandler = async (event) => {
     event.preventDefault();
+
     const jsonData = {
       name: data.name,
       description: data.description,
@@ -33,65 +31,66 @@ const Add = ({url}) => {
       type: data.type,
       image: data.image,
     };
+
     try {
       const response = await axios.post(`${url}/api/food/add`, jsonData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
+
       setData({
         name: "",
         description: "",
         price: "",
-        category: "Maharashtra",
+        category: "India",
         type: "Veg",
         serve: "",
         image: "",
       });
+
       toast.success(response.data.message);
     } catch (error) {
-      toast.error(response.data.message);
-      console.log(error);
+      toast.error("Failed to add product");
+      console.error(error);
     }
   };
 
   return (
     <div className="add">
       <form className="flex-col" onSubmit={onsubmitHandler}>
-        <h2 className="Heading">Add Items</h2>
+        <h2 className="Heading">Add Food Item</h2>
 
         <div className="add-product-name flex-col">
-          <p>Product Name</p>
+          <p>Food Name</p>
           <input
             name="name"
-            onChange={onchangehandler}
             value={data.name}
+            onChange={onchangehandler}
             type="text"
-            placeholder="Enter Product Name"
+            placeholder="Enter food name"
             required
           />
         </div>
 
         <div className="add-product-description flex-col">
-          <p>Product Description</p>
+          <p>Description</p>
           <textarea
             name="description"
-            onChange={onchangehandler}
             value={data.description}
-            placeholder="Enter Product Description"
+            onChange={onchangehandler}
             rows="6"
+            placeholder="Enter food description"
             required
           />
         </div>
 
         <div className="add-img-upload flex-col">
-          <p>Upload Image</p>
+          <p>Image URL</p>
           <input
             type="url"
-            onChange={onchangehandler}
-            value={data.image}
-            placeholder="Enter Your Image Url"
             name="image"
+            value={data.image}
+            onChange={onchangehandler}
+            placeholder="Enter image URL"
             required
             className="urlinput"
           />
@@ -99,32 +98,27 @@ const Add = ({url}) => {
 
         <div className="add-category-price">
           <div className="add-category flex-col">
-            <p>State:</p>
-            <select
-              onChange={onchangehandler}
-              value={data.category}
-              name="category"
-              placeholder="Enter Url"
-            >
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="West Bengal">West Bengal</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Rest of India">Rest of India</option>
+            <p>Country / Cuisine</p>
+            <select name="category" value={data.category} onChange={onchangehandler}>
+              <option value="India">India</option>
+              <option value="Italy">Italy</option>
+              <option value="Japan">Japan</option>
+              <option value="China">China</option>
+              <option value="Mexico">Mexico</option>
+              <option value="USA">USA</option>
+              <option value="France">France</option>
+              <option value="Middle East">Middle East</option>
             </select>
           </div>
 
           <div className="add-price flex-col">
             <p>Price</p>
             <input
-              onChange={onchangehandler}
-              value={data.price}
               type="number"
               name="price"
-              placeholder="Enter Price"
+              value={data.price}
+              onChange={onchangehandler}
+              placeholder="Enter price"
               required
             />
           </div>
@@ -132,8 +126,8 @@ const Add = ({url}) => {
 
         <div className="add-category-price">
           <div className="add-category flex-col">
-            <p>Type:</p>
-            <select onChange={onchangehandler} value={data.type} name="type">
+            <p>Type</p>
+            <select name="type" value={data.type} onChange={onchangehandler}>
               <option value="Veg">Veg</option>
               <option value="Non-Veg">Non-Veg</option>
             </select>
@@ -142,18 +136,18 @@ const Add = ({url}) => {
           <div className="add-price flex-col">
             <p>Serve</p>
             <input
-              onChange={onchangehandler}
-              value={data.serve}
               type="text"
               name="serve"
-              placeholder="Serve"
+              value={data.serve}
+              onChange={onchangehandler}
+              placeholder="e.g. 1 Plate"
               required
             />
           </div>
         </div>
 
         <button type="submit" className="add-button">
-          Add Product
+          Add Food
         </button>
       </form>
     </div>
