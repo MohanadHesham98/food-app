@@ -60,7 +60,7 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(async () => {
     console.log("MongoDB connected");
-    await createAdminIfNotExists(); // ✅ هنا الصح
+    await createAdminIfNotExists(); 
   })
   .catch((err) => console.log("MongoDB connection error:", err));
 
