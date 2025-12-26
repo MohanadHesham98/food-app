@@ -5,7 +5,13 @@
 **Ohana** means family — more than a restaurant, it’s about creating a sense of home, connecting loved ones, and sharing meals that bring people closer. Here, food feels like home and makes the distance fade away.
 
 ---
+## Demo Video
 
+Watch the full demo here:  
+
+https://github.com/user-attachments/assets/68ae262a-034f-4802-af3e-6b074d42b178
+
+---
 ## Getting Started
 
 Follow these instructions to set up the project locally on your machine.
@@ -102,3 +108,9 @@ The project is divided into three main parts:
 - Replace <machine-ip> and <node-port> with the actual values from your cluster.
 - Make sure your Docker Hub username is correctly used in the docker-compose.yml for all services.
 - For any updates, rebuild images and push them again before reapplying deployments.
+
+
+
+
+
+
