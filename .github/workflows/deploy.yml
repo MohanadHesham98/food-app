@@ -1,6 +1,6 @@
 name: CI/CD Food App
 
-on:
+on: 
   push: 
     branches: ["main"]
 
