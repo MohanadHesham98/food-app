@@ -23,10 +23,8 @@ jobs:
 
       - name: Push Docker Images
         run: |
-          docker push mohanad898/food-backend:latest
-          docker push mohanad898/food-frontend:latest
-          docker push mohanad898/food-admin:latest
-
+          docker compose push
+          
       - name: Deploy to Kubernetes
         run: |
           cd k8s
