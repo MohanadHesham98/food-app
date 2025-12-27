@@ -1,4 +1,4 @@
-name: CI/CD Food App 
+name: CI/CD Food App
 
 on: 
   push: 
