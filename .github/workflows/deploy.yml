@@ -1,0 +1,38 @@
+name: CI/CD Food App
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Docker Login
+        run: |
+          echo "${{ secrets.DOCKER_TOKEN }}" | docker login \
+          -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Build Docker Images
+        run: |
+          docker compose build
+
+      - name: Push Docker Images
+        run: |
+          docker push mohanad898/food-backend:latest
+          docker push mohanad898/food-frontend:latest
+          docker push mohanad898/food-admin:latest
+
+      - name: Deploy to Kubernetes
+        run: |
+          cd k8s
+          kubectl apply -f namespace.yaml
+          kubectl apply -f food-secrets.yaml
+          kubectl apply -f mongodb/
+          kubectl apply -f backend/
+          kubectl apply -f frontend/
+          kubectl apply -f admin/
