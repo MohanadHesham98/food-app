@@ -14,6 +14,9 @@ https://github.com/user-attachments/assets/68ae262a-034f-4802-af3e-6b074d42b178
 ---
 ## Getting Started
 
+**CI/CD Notice:** This project uses **GitHub Actions** for automated build, Docker image push, and Kubernetes deployment.  
+For full setup instructions, check the [CI/CD README](https://github.com/MohanadHesham98/food-app/blob/main/.github/workflows/README.md).
+
 Follow these instructions to set up the project locally on your machine.
 
 ### Prerequisites
