@@ -5,28 +5,23 @@
 **Ohana** means family — more than a restaurant, it’s about creating a sense of home, connecting loved ones, and sharing meals that bring people closer. Here, food feels like home and makes the distance fade away.
 
 ---
-## Demo Video
 
-Watch the full demo here:  
-
-https://github.com/user-attachments/assets/68ae262a-034f-4802-af3e-6b074d42b178
-
----
 ## Getting Started
 
-**CI/CD Notice:** This project uses **GitHub Actions** for automated build, Docker image push, and Kubernetes deployment.  
-For full setup instructions, check the [CI/CD README](https://github.com/MohanadHesham98/food-app/blob/main/.github/workflows/README.md).
-
+This project uses Helm for Kubernetes deployment. You can deploy the full platform using a single Helm chart.
 Follow these instructions to set up the project locally on your machine.
 
 ### Prerequisites
 
 Make sure you have the following installed on your system:
 
-- **Node.js** (v14 or later)
-- **npm** (for package management)
-- **Docker** and **Docker Compose**
-- **kubectl** (for Kubernetes deployments "K3S")
+Make sure you have the following installed:
+
+- Node.js (v14 or later)
+- npm (for package management)
+- Docker and Docker Compose
+- kubectl (for Kubernetes)
+- Helm 3+
 
 ---
 
@@ -51,26 +46,24 @@ Make sure you have the following installed on your system:
        docker push mohanad898/food-admin:latest
      ```
 
-### Running the Application on Kubernetes
+### Deploying on Kubernetes with Helm
 
-1. **Apply namespace and secrets**:
+1. **Navigate to the Helm chart**:
    ```bash
-   cd k8s
-   kubctle apply -f namespace.ymal
-   kubctle apply -f food-secrets.yaml
+   cd k8s/food-app
    ```
- 2. **Deploy services**:
+ 2. **Install or upgrade the release**:
    ```bash
-   kubctle apply -f mongodb/
-   kubctle apply -f backend/ 
-   kubctle apply -f frontend/
-   kubctle apply -f admin/
+   helm upgrade --install food-app ./food-app --namespace food --create-namespace
    ```
 
 3. **Verify deployments**:
    ```bash
-   kubctel get ns
-   kubctel get all -n food
+   kubectl get ns
+   kubectl get all -n food
+   kubectl get pvc -n food
+   kubectl get secret -n food
+
    ```
    
 4. **Get your machine IP**:
@@ -108,12 +101,7 @@ The project is divided into three main parts:
    A dedicated admin interface built using **React (Vite)**, allowing admins to manage food items, orders, and promocodes. It is connected to the backend for data management and order processing.
 ---
 ### Notes
-- Replace <machine-ip> and <node-port> with the actual values from your cluster.
-- Make sure your Docker Hub username is correctly used in the docker-compose.yml for all services.
-- For any updates, rebuild images and push them again before reapplying deployments.
-
-
-
-
-
+- Make sure Docker images are correctly pushed to Docker Hub before deploying via Helm.
+- For any updates, rebuild images, push to Docker Hub, and then run helm upgrade --install.
+- Helm simplifies deployment: no need to manually kubectl apply YAML files.
 
