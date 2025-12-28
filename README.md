@@ -1,4 +1,4 @@
-# About The Project
+# About The Project 
 
 **Ohana** Food Ordering Platform is a modern web application that allows users to browse, order, and manage meals online with ease. It is designed to create a seamless and user-friendly experience, both for customers and for admin management.  
 
