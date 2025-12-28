@@ -1,137 +1,98 @@
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5835cdbc-29c6-41ae-9d9a-2d143f20c9c2" alt="Food Ordering Website Logo">
-</p>
+# About The Project 
 
+**Ohana** Food Ordering Platform is a modern web application that allows users to browse, order, and manage meals online with ease. It is designed to create a seamless and user-friendly experience, both for customers and for admin management.  
 
+**Ohana** means family — more than a restaurant, it’s about creating a sense of home, connecting loved ones, and sharing meals that bring people closer. Here, food feels like home and makes the distance fade away.
 
-https://github.com/user-attachments/assets/b833b686-a4fb-4abb-8b16-9862bce135e4
+---
+## Demo Video
 
+Watch the full demo here:  
 
-# About The Project
+https://github.com/user-attachments/assets/68ae262a-034f-4802-af3e-6b074d42b178
 
-**Nivala** is a MERN stack food ordering platform that connects customers with the comfort of home-cooked meals. Easily explore a wide selection of homemade food options and get them delivered to your door. **Nivala** emphasizes traditional, authentic meals, offering simplicity and convenience.
-
-Explore Nivala:
-- [Customer Portal](https://nivala.vishalrmahajan.in/)
-- [Admin Dashboard](https://nivalaadmin.vishalrmahajan.in/)  
-*(Please wait until the backend wakes up, as it is deployed on Render, which automatically sends it to sleep after 15 minutes of inactivity.)*
-
-## Built With
-
-<p>
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,express,mongodb,vercel," alt="Tech Stack" />
-</p>
-
+---
 ## Getting Started
+
+**CI/CD Notice:** This project uses **GitHub Actions** for automated build, Docker image push, and Kubernetes deployment.  
+For full setup instructions, check the [CI/CD README](https://github.com/MohanadHesham98/food-app/blob/main/.github/workflows/README.md).
 
 Follow these instructions to set up the project locally on your machine.
 
 ### Prerequisites
 
 Make sure you have the following installed on your system:
+
 - **Node.js** (v14 or later)
-- **npm** or **yarn** (for package management)
+- **npm** (for package management)
+- **Docker** and **Docker Compose**
+- **kubectl** (for Kubernetes deployments "K3S")
+
+---
 
 ### Installation
 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/VishalRMahajan/Nivala.git
-   cd Nivala
-    ```
-2. **Install dependencies for the frontend, backend, and admin dashboard**:
-   - For Frontend:
+   git clone https://github.com/MohanadHesham98/food-app.git
+   cd food-app
+   ```
+
+2. **Build Docker images**:
      ```bash
-       cd Frontend
-       npm install
+       docker compose build
      ```
-   - For Backend:
+3. **Push images to Docker Hub**:
      ```bash
-       cd ../Backend
-       npm install
-     ```
-   - For Admin Dashboard:
-     ```bash
-       cd ../Admin
-       npm install
+       docker login
+       docker push mohanad898/food-backend:latest
+       docker push mohanad898/food-frontend:latest
+       docker push mohanad898/food-admin:latest
      ```
 
-### Running the Application
+### Running the Application on Kubernetes
 
-1. **Start the Backend**:
+1. **Apply namespace and secrets**:
    ```bash
-   cd Backend
-   npm run server
+   cd k8s
+   kubctle apply -f namespace.ymal
+   kubctle apply -f food-secrets.yaml
    ```
-   This will start the backend server on the specified port (default is `http://localhost:4000`).  
-   You can change the port from [server.js](https://github.com/VishalRMahajan/Nivala/blob/main/Backend/server.js).
-
-2. **Start the Frontend (Customer Portal)**:
+ 2. **Deploy services**:
    ```bash
-   cd Frontend
-   npm run dev
+   kubctle apply -f mongodb/
+   kubctle apply -f backend/ 
+   kubctle apply -f frontend/
+   kubctle apply -f admin/
    ```
-   This will start the customer-facing frontend on `http://localhost:5173`.
 
-3. **Start the Admin Dashboard**:
+3. **Verify deployments**:
    ```bash
-   cd Admin
-   npm run dev
+   kubctel get ns
+   kubctel get all -n food
    ```
-   This will start the admin dashboard on `http://localhost:5174`.
-
-### Environment Variables
-
-Each part of the project (Frontend, Backend, Admin) requires its own `.env` file with appropriate environment variables.
-
-1. **Backend**:  
-   Create a `.env` file in the **Backend** folder with the following variables:
+   
+4. **Get your machine IP**:
+   ```bash
+   ip a
    ```
-   DB_URI=your_mongo_connection_string
-   JWT_SECRET=your_jwt_secret
+5. **Open in browser**:
+   ```bash
+   http://<machine-ip>:<node-port>
    ```
-
-2. **Frontend**:  
-   Create a `.env` file in the **Frontend** folder with the following variables:
-   ```
-   VITE_BACKEND_URL=http://localhost:4000 or Your Deployed Backend URL
-   ```
-
-3. **Admin Dashboard**:  
-   Create a `.env` file in the **Admin** folder with the following variables:
-   ```
-   VITE_BACKEND_URL=http://localhost:4000 or Your Deployed Backend URL
-   ```
-
-### Explore the App
-
-- **Frontend (Customer Portal)**: Open `http://localhost:5173` to view the customer-facing interface.
-- **Admin Dashboard**: Open `http://localhost:5174` to view the admin interface.
-
 ## How It Works
-
-1. **Sign Up**: New users can create an account to get started.
-2. **Login**: Existing users can log in to their accounts.
-3. **Add to Cart**: After logging in, users can browse and add food items to their cart.
-4. **Promocode**: Users can enter a promocode in the designated section to receive discounts. There are two types of coupons: percentage and fixed amount.
-5. **Address Form**: Users fill out the address form before placing an order.
-6. **Order Placement**: After reviewing their order, users can click on "Order." Upon successful order placement, they can view their order in the orders section.
-
-### Admin Dashboard Features
-
-- Admins can add or delete food items and promocodes.
-- Admins can set the status of orders.
-
-### Future Updates
-
-- **Profile Page**: Users can manage personal details and view order history.
-- **Saved Addresses**: Allow users to choose previously used addresses for faster checkout.
-- **Real-Time Delivery Tracking**: Users can track their orders in real-time.
-- **Payment Gateway Integration**: Facilitate secure payments upon acquiring an API key.
-- **Search Functionality**: Enable users to find dishes quickly.
-- **User Reviews and Ratings**: Customers can provide feedback on meals.
-- **Admin Analytics Dashboard**: Insights on sales and customer behavior.
+### User Flow:
+1. Sign Up: New users can create an account quickly and securely to get started with ordering.
+2. Login: Existing users can log in to access their account, view past orders, and manage their profile.
+3. Browse & Add to Cart: Users can explore the menu, view food details, and add desired items to their cart.
+4. Apply Promocode: Users can enter a promocode at checkout to receive discounts. The platform supports two    types of coupons: percentage-based and fixed-amount discounts.
+   
+### Admin Dashboard:
+1. Food Management: Admins can add, edit, or delete food items to keep the menu updated.
+2. Promocode Management: Admins can create and remove promocodes, defining discount type and validity.
+3. Order Management: Admins can monitor all orders, update their status, and ensure smooth order
+   fulfillment.
 
 ## Repository Structure
 
@@ -145,3 +106,14 @@ The project is divided into three main parts:
 
 3. **Admin Dashboard**:  
    A dedicated admin interface built using **React (Vite)**, allowing admins to manage food items, orders, and promocodes. It is connected to the backend for data management and order processing.
+---
+### Notes
+- Replace <machine-ip> and <node-port> with the actual values from your cluster.
+- Make sure your Docker Hub username is correctly used in the docker-compose.yml for all services.
+- For any updates, rebuild images and push them again before reapplying deployments.
+
+
+
+
+
+
