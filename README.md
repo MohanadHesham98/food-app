@@ -26,7 +26,7 @@ Make sure you have the following installed on your system:
 - **Node.js** (v14 or later)
 - **npm** (for package management)
 - **Docker** and **Docker Compose**
-- **kubectl** (for Kubernetes deployments)
+- **kubectl** (for Kubernetes deployments "K3S")
 
 ---
 
