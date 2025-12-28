@@ -1,13 +1,13 @@
 .add {
     width: 100%;
     font-size: 16px;
-    border: 3px solid #7bae37;
+    border: 3px solid #8eaebf;
     padding: 50px;
     border-radius: 15px;
 }
 
 .Heading {
-    color: #7bae37;
+    color: #8eaebf;
 }
 
 .add form {
@@ -28,14 +28,14 @@
 .add-product-description textarea ,
 .urlinput{
     padding: 10px;
-    border: 2px solid #7bae37;
+    border: 2px solid #8eaebf;
     border-radius: 10px;
     outline: none;
 }
 
 .add-product-name input:focus,
 .add-product-description textarea:focus {
-    border-color: #7bae37;
+    border-color: #8eaebf;
     box-shadow: 0 0 5px rgba(123, 174, 55, 0.5);
 }
 
@@ -48,14 +48,14 @@
 .add-category-price input {
     width: 190px;
     padding: 10px;
-    border: 2px solid #7bae37;
+    border: 2px solid #8eaebf;
     border-radius: 10px;
     outline: none;
 }
 
 .add-category-price select:focus,
 .add-category-price input:focus {
-    border-color: #7bae37;
+    border-color: #8eaebf;
     box-shadow: 0 0 5px rgba(123, 174, 55, 0.5);
 }
 
@@ -63,7 +63,7 @@
     width: 120px;
     border: none;
     padding: 10px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
     cursor: pointer;
     border-radius: 10px;
@@ -73,7 +73,7 @@
 
 @media (max-width: 900px) {
     body {
-        background-color: #7bae37;
+        background-color: #8eaebf;
     }
 
     .add {
@@ -92,7 +92,7 @@
     .add-category-price input {
         width: 110px;
         padding: 10px;
-        border: 2px solid #7bae37;
+        border: 2px solid #8eaebf;
         border-radius: 10px;
         outline: none;
     }

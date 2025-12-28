@@ -9,7 +9,7 @@
     max-width: 400px;
     background-color: white;
     padding: 50px;
-    border: 3px solid #7bae37;
+    border: 3px solid #8eaebf;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -43,7 +43,7 @@
 .form-group input {
     width: 100%;
     padding: 12px;
-    border: 2px solid #7bae37;
+    border: 2px solid #8eaebf;
     border-radius: 10px;
     font-size: 16px;
     outline: none;
@@ -51,14 +51,14 @@
 }
 
 .form-group input:focus {
-    border-color: #7bae37;
+    border-color: #8eaebf;
     box-shadow: 0 0 5px rgba(123, 174, 55, 0.5);
 }
 
 .login-button {
     width: 100%;
     padding: 12px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
     border: none;
     border-radius: 10px;
@@ -68,11 +68,11 @@
 }
 
 .login-button:hover {
-    background-color: #6a9b2e;
+    background-color: #7495a7;
 }
 
 .login-button:active {
-    background-color: #5c8a28;
+    background-color: #607b8a;
 }
 
 .login-form p {
@@ -81,13 +81,13 @@
 }
 
 .login-form a {
-    color: #7bae37;
+    color: #8eaebf;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .login-form a:hover {
-    color: #6a9b2e;
+    color: #7495a7;
 }
 
 @media (max-width: 900px) {

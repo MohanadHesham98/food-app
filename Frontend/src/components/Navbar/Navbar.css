@@ -25,7 +25,7 @@
 }
 
 .navbar button{
-    background-color: #7bae37;
+    background-color: #8eaebf;
     font-size: 16px;
     color: white;
     border: 1px solid white;
@@ -36,21 +36,21 @@
 }
 
 .navbar .search-icon:hover{
-    color: #7bae37; 
+    color: #8eaebf; 
     transform: scale(1.1);
     transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .navbar-cart-icon:hover{
-    color: #7bae37; 
+    color: #8eaebf; 
     transform: scale(1.1);
     transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .navbar .active{
-    color: #7bae37;
+    color: #8eaebf;
     font-weight: bold;
-    border-bottom : 2px solid #7bae37;
+    border-bottom : 2px solid #8eaebf;
 }
 
 .navbar:hover{
@@ -73,7 +73,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     border-radius: 50%; 
     top: -12px;
     right: -10px;
@@ -107,7 +107,7 @@
     background-color: white;
     padding: 12px 25px;
     border-radius: 4px;
-    border: 1px solid #7bae37;
+    border: 1px solid #8eaebf;
     outline: 2px solid white;
     list-style: none;
 
@@ -121,7 +121,7 @@
 }
 
 .nav-profile-dropdown li:hover{
-    color: #7bae37;
+    color: #8eaebf;
 }
 
 

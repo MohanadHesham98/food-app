@@ -68,7 +68,7 @@
 .cart-total button {
     border: none;
     color: white;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     width: max(15vw, 200px);
     padding: 12px 0px;
     border-radius: 4px;
@@ -115,7 +115,7 @@
 
 .cart-promocode-input button {
     border: none;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
     padding: 12px 5px;
     border-radius: 4px;
@@ -124,7 +124,7 @@
 }
 
 .cart-promocode-input button:hover {
-    background-color: #6a9b2e;
+    background-color: #7495a7;
 }
 
 @media (max-width: 750px) {

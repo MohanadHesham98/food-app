@@ -156,23 +156,23 @@ const PlaceOrder = ({ setshowPaymentGateway, setOrderData, setShowLogin }) => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>₹ {getTotalCartAmount()}</p>
+              <p>$ {getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Discount</p>
-              <p>₹ {discount}</p>
+              <p>$ {discount}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>₹ {getTotalCartAmount() === 0 ? 0 : 25}</p>
+              <p>$ {getTotalCartAmount() === 0 ? 0 : 25}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
               <p>
-                ₹ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 25 - discount}
+                $ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 25 - discount}
               </p>
             </div>
             <hr />

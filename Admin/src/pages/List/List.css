@@ -21,14 +21,14 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    border: 1px solid #7bae37;
+    border: 1px solid #8eaebf;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .list-table-format.title {
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
     font-weight: bold;
 }

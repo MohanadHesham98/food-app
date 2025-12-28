@@ -21,7 +21,7 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    border: 1px solid #7bae37;
+    border: 1px solid #8eaebf;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,7 +35,7 @@
 
 .promo-update-button {
     padding: 10px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
     border: none;
     border-radius: 5px;
@@ -45,14 +45,14 @@
 }
 
 .promo-update-button:hover {
-    background-color: #6a9b2e;
+    background-color: #7495a7;
 }
 
 .promo-add-button {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
     border: none;
     border-radius: 5px;
@@ -62,7 +62,7 @@
 }
 
 .promo-add-button:hover {
-    background-color: #6a9b2e;
+    background-color: #7495a7;
 }
 
 @media (max-width: 1200px) {

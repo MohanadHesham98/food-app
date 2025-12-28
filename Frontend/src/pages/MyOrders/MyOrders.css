@@ -17,12 +17,12 @@
     font-size: 14px;
     padding: 10px 20px;
     color: #454545;
-    border: 1px solid #7bae37;
+    border: 1px solid #8eaebf;
     border-radius: 10px;
 }
 
 .my-orders-order p span{
-    color: #7bae37;
+    color: #8eaebf;
 }
 
 .my-orders-order p b{
@@ -34,10 +34,13 @@
     border: none;
     padding: 12px 0px;
     border-radius: 4px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     cursor: pointer;
     color: white;
     font-size: 14px;
+}
+.my-orders-order button:hover {
+    background-color: #7495a7; 
 }
 
 @media (max-width: 1200px) {

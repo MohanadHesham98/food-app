@@ -72,7 +72,7 @@ const Cart = () => {
                     alt={item.name}
                   />
                   <p>{item.name}</p>
-                  <p>₹ {item.price}</p>
+                  <p>$ {item.price}</p>
                   <div className="remove">
                     <img
                       src={assets.remove_icon_red}
@@ -86,7 +86,7 @@ const Cart = () => {
                       alt="Add"
                     />
                   </div>
-                  <p>₹ {item.price * cartItems[item._id]}</p>
+                  <p>$ {item.price * cartItems[item._id]}</p>
                 </div>
                 <hr />
               </div>
@@ -101,23 +101,23 @@ const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>₹ {getTotalCartAmount()}</p>
+              <p>$ {getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Discount</p>
-              <p>₹ {discount}</p>
+              <p>$ {discount}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>₹ {getTotalCartAmount() === 0 ? 0 : 25}</p>
+              <p>$ {getTotalCartAmount() === 0 ? 0 : 25}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
               <p>
-                ₹{" "}
+                $ {" "}
                 {getTotalCartAmount() === 0
                   ? 0
                   : getTotalCartAmount() + 25 - discount}

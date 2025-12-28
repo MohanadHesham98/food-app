@@ -1,0 +1,36 @@
+namespace: food
+
+nodeEnv: development
+
+secrets:
+  name: food-secrets
+  adminName: admin
+  adminEmail: admin@test.com
+  adminPassword: "12345678"
+  jwtSecret: S3j!9sDC8lQ2lVxZ
+  mongoUser: root
+  mongoPassword: example
+  mongoDbName: nvaladDB
+  mongoUri: mongodb://root:example@mongodb:27017/nvaladDB?authSource=admin
+
+mongodb:
+  replicaCount: 1
+  image: mongo:6.0
+  pvcSize: 2Gi
+
+backend:
+  replicaCount: 1
+  image: mohanad898/food-backend:latest
+  port: "5000"
+  nodeEnv: production
+
+frontend:
+  replicaCount: 1
+  image: mohanad898/food-frontend:latest
+  port: "80"
+  backendUrl: http://backend:5000
+
+admin:
+  replicaCount: 1
+  image: mohanad898/food-admin:latest
+  port: "80"

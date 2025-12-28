@@ -6,7 +6,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #7bae37;
+  background-color: #8eaebf;
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
@@ -28,7 +28,7 @@ hr {
 
 .app-side-section{
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   width: 100%;
   margin: 20px;
   border-radius: 25px;
@@ -48,7 +48,7 @@ hr {
   }
 
   .app-side-section{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     margin: 20px;
     margin-top: 60px;
     border-radius: 25px;

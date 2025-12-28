@@ -38,7 +38,7 @@ const MyOrders = () => {
                 }
                 
             })}</p>
-            <p>₹ {order.amount}</p>
+            <p>$ {order.amount}</p>
             <p>Items: {order.items.length}</p>
             <p>Status: <b>{order.status}</b></p>
             <button onClick={fetchOrders()}>Check Order Status</button>

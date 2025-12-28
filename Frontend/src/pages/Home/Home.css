@@ -23,7 +23,7 @@
 }
 
 .sticky-cart-button:hover {
-    background-color: #7bae37;
+    background-color: #8eaebf;
     color: white;
 }
 
@@ -31,7 +31,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #7bae37;
+    background-color: #8eaebf;
     border-radius: 50%; 
     top: 9px;
     right: 9px;

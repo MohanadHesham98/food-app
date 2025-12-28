@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.admin.replicaCount }}
+  selector:
+    matchLabels:
+      app: admin
+  template:
+    metadata:
+      labels:
+        app: admin
+    spec:
+      containers:
+      - name: admin
+        image: {{ .Values.admin.image }}
+        ports:
+        - containerPort: {{ .Values.admin.port }}
+        envFrom:
+        - configMapRef:
+            name: frontend-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-nodeport
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: admin
+  ports:
+    - protocol: TCP
+      port: {{ .Values.admin.port }}
+      targetPort: {{ .Values.admin.port }}
+      nodePort: 30001
+  type: NodePort

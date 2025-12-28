@@ -107,7 +107,7 @@ const Add = ({ url }) => {
               <option value="Mexico">Mexico</option>
               <option value="USA">USA</option>
               <option value="France">France</option>
-              <option value="Middle East">Middle East</option>
+              <option value="Egypt">Egypt</option>
             </select>
           </div>
 
